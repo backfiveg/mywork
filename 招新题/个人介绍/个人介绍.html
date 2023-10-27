@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人介绍</title>
+    <link rel="stylesheet" href="./个人介绍.css">
+</head>
+<body>
+    <div class="head">
+        <div class="wrapper">
+            <div class="nav">个人简介</div>
+            <div class="nav">兴趣爱好</div>
+            <div class="nav">了解更多</div>
+
+            <div class="information">一个前端小白</div>
+        </div>
+    </div>
+    <div class="banner">
+        <div class="photo"><img src="p3.jpg" alt=""><h1>很高兴认识你</h1></div>
+        <div class="left">&lt;</div>
+        <div class="right">&gt;</div>
+        <ol>
+            <li class="lit"></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </div>
+    <div class="introduction">
+        <h1>自我介绍</h1>
+        <div class="photo"><img src="./p1.jpg" alt=""></div>
+
+       <div class="content">大家好，我是一名2023级的大一新生，来自电子工程与科学学院。我怀揣着对计算机领域浓厚的兴趣，了解了星辰工作室并认识了不同方向的工作区别。
+        在将近30天的前端学习后，我对前端又有了新的认识，让我学到了更多的知识。接下来，希望我的介绍能让大家更好地认识我
+    </div>
+    </div>
+    <div class="interest">
+        <h1>兴趣爱好</h1>
+        <div class="photo1"><img src="./car2.jpg" alt=""></div>
+        <div class="photo2"><img src="./car3.jpg" alt=""></div>
+        <div class="article">
+            <h2>一个小兴趣：驾驶</h2>
+            <div class="content">每个男生应该都想拥有一台属于自己的超跑吧，虽然有时这是个不切实际的梦想。对于驾驶的乐趣也许只有自己上车之后才能体会。我很享受驾驶时的乐趣，也很遗憾那些还未奋斗就已停产的梦。
+                当然，除了驾驶，如果打游戏算兴趣的话，那可以加我一个。
+                </div>        </div>
+    </div>
+    <div class="other">
+        <h1>了解更多</h1>
+                <h2 class="q1">Q：为什么我选择前端?</h2>
+                <div class="a1">第一次了解前端时，便刷新了我对写代码的认知，我一直以为写代码就是跟数据和算法打交道，想不到前端不仅仅是代码的实现，更重要的是我可以通过网页可视化我的代码，让我将代码与对网页的视觉享受联系起来，从此我便决心学习前端</div>
+        
+                  <h2 class="q2">Q:再进进进进一步认识我</h2>
+                <div class="a2">对外i人对内e人，最喜欢用的表情是狗头，斜眼笑，微笑和一对卡姿兰大眼睛。喜欢打一点点乒乓球，来自云南，但吃野生菌没中过毒。</div>
+    </div>
+    <script>
+        const photo =[
+            {src:'p3.jpg',title:'很高兴认识你'},
+            {src:'car1.jpg',title:'想感受一下推背感的刺激吗？'},
+            {src:'p2.jpg',title:'进一步了解我'}]
+        let i = 0
+        const img = document.querySelector('.banner img')
+        const title = document.querySelector('.banner h1')
+        const nextfun = () =>{
+            const li = document.querySelector('.lit')
+            li.classList.remove('lit')
+            const dot = document.querySelectorAll('.banner li')
+            dot[i].classList.add('lit')
+
+           img.src =  photo[i].src
+           title.innerHTML = photo[i].title
+
+        }
+        const next = document.querySelector('.banner .right')
+        const pre = document.querySelector('.banner .left')
+        next.addEventListener('click',()=>{
+            i++
+            i===3 ? i=0 : i=i
+            nextfun()
+        })
+        pre.addEventListener('click',()=>{
+            i--
+            i===-1 ? i=photo.length-1 : i=i
+            nextfun()
+        })
+        let timefun = setInterval(()=>{
+            i++
+            i===3 ? i=0 : i=i
+            nextfun()
+        },2000)
+        const banner = document.querySelector('.banner')
+        banner.addEventListener('mouseenter',()=>{
+            clearInterval(timefun)
+        })
+        banner.addEventListener('mouseleave',()=>{
+            if(timefun) clearInterval(timefun)
+            timefun = setInterval( ()=>{i++
+            i===3 ? i=0 : i=i
+            nextfun()},2000)
+        })
+        const h11 = document.querySelector('.introduction')
+        const h12 = document.querySelector('.interest')
+        const h13 = document.querySelector('.other')
+
+        const nav = document.querySelectorAll('.wrapper .nav')
+        nav[0].addEventListener('click',()=>{
+            document.documentElement.scrollTop = h11.offsetTop -100 
+        })
+        nav[1].addEventListener('click',()=>{
+            document.documentElement.scrollTop = h12.offsetTop -100
+        })
+        nav[2].addEventListener('click',()=>{
+            document.documentElement.scrollTop = h13.offsetTop 
+        })
+
+        
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,307 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+html{
+    scroll-behavior: smooth;
+    background-color: aliceblue;
+}
+.head{
+    height: 100px;
+background-image: linear-gradient(
+    to right,
+    aliceblue,
+    rgba(233, 163, 23, 0.2) 80%,
+    rgba(14, 237, 233, 0.2)
+
+
+);}
+.wrapper{
+    width: 1080px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+}
+.wrapper .nav{
+    width: 120px;
+    height: 100%;
+    margin: 0 20px;
+    font-size: 18px;
+    line-height: 100px;
+    text-align: center;
+    cursor: pointer;
+
+}
+.wrapper .nav:first-child{
+    margin-left: 400px;
+}
+.wrapper .information{
+    width: 220px;
+    height: 100%;
+    margin-left: 20px;
+    font-size: 18px;
+    line-height: 100px;
+    text-align: center;
+}
+.banner{
+    margin: 10px auto;
+    margin-top: 0;
+    width: 1080px;
+    height: 640px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.banner .photo img{
+    width: 1080px;
+    height: 640px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 20px;
+    
+}
+.banner .photo h1{
+    position: absolute;
+    left: 0;
+    bottom: 30px;
+    font-size: 20px;
+    color: #fff;
+    height: 40px;
+    line-height: 40px;
+    text-align: left;
+    padding: 0 100px;
+    display: none;
+    transition: all 0.5s;
+}
+.banner:hover .photo h1{
+    display: block;
+}
+.banner .left,
+.banner .right{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    user-select: none;
+    font-size: 18px;
+    line-height: 60px;
+    text-align: center;
+    background-color: rgba(0,0,0,0.4);
+    display: none;
+    cursor: pointer;
+    
+}
+.banner .left{
+    left: 0;
+    border-radius: 0 30px 30px 0;
+}
+.banner .right{
+    right: 0;
+    border-radius: 30px 0 0 30px;
+}
+.banner:hover .left,
+.banner:hover .right{
+    display: block;
+    
+}
+.banner ol{
+    position: absolute;
+    width: 100px;
+    height: 15px;
+    bottom: 15px;
+    left: 115px;
+    display: flex;
+
+}
+.banner ol li{
+    width: 8px;
+    height: 8px;
+    list-style: none;
+    margin: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.25;
+}
+.banner ol .lit{
+    opacity: 1;
+}
+.introduction{
+    width: 1080px;
+    height: 600px;
+    margin: 10px auto;
+    position: relative;
+    border-radius: 15px;
+}
+.introduction h1{
+    height: 120px;
+    width: 250px;
+    position: absolute;
+    left: 0;
+    font-size: 30px;
+    line-height: 120px;
+    text-align: center;
+    border-bottom: 10px solid black;
+}
+.introduction .photo{
+    width: 720px;
+    height: 480px;
+    position: absolute;
+    left: 0;
+    top: 120px;
+}
+.introduction .photo img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+.introduction .content{
+    width: 360px;
+    height: 480px;
+    position: absolute;
+    right: 0;
+    top: 120px;
+    border-radius: 20px;
+    border: rgba(12, 12, 12, 0.2);
+    background-image: linear-gradient(
+        rgba(14, 237, 233, 0.2),
+        rgba(233, 163, 23, 0.2)
+    );
+    font-size: 24px;
+    line-height: 48px;
+    text-indent: 2em;
+
+}
+.interest{
+    width: 1080px;
+    height: 600px;
+    margin: 10px auto;
+    position: relative;
+    border-radius: 15px;
+}
+.interest h1{
+    height: 120px;
+    width: 250px;
+    position: absolute;
+    left: 0;
+    font-size: 30px;
+    line-height: 120px;
+    text-align: center;
+    border-bottom: 10px solid black;
+}
+.interest .photo1{
+    width: 360px;
+    height: 240px;
+    position: absolute;
+    left: 0;
+    top: 120px;
+}
+.interest .photo2{
+    width: 360px;
+    height: 240px;
+    position: absolute;
+    left: 0;
+    top: 360px;
+}
+
+.interest .photo1 img,
+.interest .photo2 img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+.interest .article{
+    width: 720px;
+    height: 480px;
+    position: absolute;
+    right: 0;
+    top: 120px;
+    border-radius: 20px;
+    border: rgba(0,0,0,0.2);
+    background-color: #fff;
+
+}
+.article h2{
+    width: 100%;
+    height: 120px;
+    font-size: 40px;
+    line-height: 120px;
+    text-align: center;
+    background-image: linear-gradient(
+        rgba(14, 237, 233, 0.2),
+        rgba(233, 163, 23, 0.2)
+    );
+
+}
+.article .content{
+    width: 100%;
+    height: 360px;
+    border: 0;
+    font-size: 24px;
+    line-height: 72px;
+    text-indent: 2em;
+    background-image: linear-gradient(
+        rgba(236, 146, 10, 0.2),
+        rgba(3, 224, 244, 0.2)
+    );
+}
+.other{
+    width: 1080px;
+    height: 600px;
+    margin: 10px auto;
+    position: relative;
+    border-radius: 15px;
+}
+.other h1{
+    height: 120px;
+    width: 250px;
+    position: absolute;
+    left: 0;
+    font-size: 30px;
+    line-height: 120px;
+    text-align: center;
+    border-bottom: 10px solid black;
+}
+
+.other h2{
+    width: 100%;
+    height: 80px;
+    font-size: 18px;
+    line-height: 80px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    background-image: linear-gradient(
+        rgba(236, 146, 10, 0.2),
+        rgba(3, 224, 244, 0.2)
+    );
+
+}
+.other div{
+    width: 100%;
+    height: 160px;
+    border: 0;
+    position: absolute;
+    left: 0;
+    font-size: 30px;
+    line-height: 30px;
+    background-image: linear-gradient(
+        rgba(14, 237, 233, 0.2),
+        rgba(233, 163, 23, 0.2)
+    );
+}
+.other .q1{
+    top: 120px;
+}
+.other .q2{
+    top: 360px;
+}
+.other .a1{
+    top: 200px;
+}
+.other .a2{
+    top: 440px;
+}

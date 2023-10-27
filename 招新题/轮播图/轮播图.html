@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./轮播图.css">
+</head>
+<body>
+    <div class="wrapper">
+        <ul>
+            <li class="item"><a href="#"><img src="./city6.webp" alt=""></a></li>
+            <li class="item"><a href="#"><img src="./city1.webp" alt=""></a></li>
+            <li class="item"><a href="#"><img src="./city2.jpg" alt=""></a></li>
+            <li class="item"><a href="#"><img src="./city3.jpg" alt=""></a></li>
+            <li class="item"><a href="#"><img src="./city4.jpg" alt=""></a></li>
+            <li class="item"><a href="#"><img src="./city5.jpg" alt=""></a></li>
+            <li class="item"><a href="#"><img src="./city6.webp" alt=""></a></li>
+            <li class="item"><a href="#"><img src="./city1.webp" alt=""></a></li>
+
+        </ul>
+        <div class="previous">&lt;</div>
+        <div class="next">&gt;</div>
+        <ol class="spot">
+            <li class="lit"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </div>
+    <script>
+        const ul = document.querySelector('.wrapper ul')
+        const pre = document.querySelector('.previous')
+        const next = document.querySelector('.next')
+        const wrapper = document.querySelector('.wrapper')
+        let n=1
+        const nextfun = () => {
+             n++
+           if(n===8){
+                n=2
+                ul.style.left = -720 + 'px'
+                ul.style.transition = 'none'
+                ul.clientHeight
+                /*这个地方是在网上查找资料写出来的，
+                 ul.clientHeight的作用是强制渲染页面使浏览器优先执行这串代码，
+                否则 ul.style.transition = 'none' 将会被覆盖*/
+
+            }
+            ul.style.left = -720*n + 'px'
+            ul.style.transition = '0.5s'}
+        const prefun = () => {
+              n--
+           if(n===-1){
+                n=5
+                ul.style.left = -6*720 + 'px'
+                ul.style.transition = 'none'
+                ul.clientHeight
+            }
+            ul.style.left = -720*n + 'px'
+            ul.style.transition = '0.5s'
+        }
+        pre.addEventListener('click',prefun)
+        next.addEventListener('click',nextfun)
+        let time = setInterval(nextfun,2000) 
+        wrapper.addEventListener('mouseenter',() =>clearInterval(time))
+        wrapper.addEventListener('mouseleave',() =>{
+            if (time) clearInterval(time)
+            time = setInterval(nextfun,2000)})
+    </script>
+</body>
+
+</html>

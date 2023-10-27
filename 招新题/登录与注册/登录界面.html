@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录注册</title>
+    <link rel="stylesheet" href="./登录界面.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="left"><img src="./pexels-keegan-houser-1478685.jpg" alt=""></div>
+        <div class="rightlog">
+            <h1 class="topic">登录</h1>
+            <input class="tx" type="text" placeholder="请输入你的账号">
+            <input class="ps" type="password" placeholder="请输入你的密码">
+            <button class="log">登录</button>
+            <div class="other">            
+                <span class="leap">注册</span>
+            </div>
+        </div>
+        <div class="rightreg">
+            <h1 class="reg">注册</h1>
+            <input class="callnumber" type="text" placeholder="请输入你的手机号">
+            <div class="code"><input type="text" placeholder="请输入你的验证码">
+                <button>获取验证码</button></div>
+            <input class="tx" type="text" placeholder="请输入你的账号">
+            <input class="ps" type="password" placeholder="请设置你的密码">
+            <input class="prs" type="password" placeholder="请确认你的密码">
+
+            <button class="log">注册</button>
+            <div class="other">            
+                <span>登录</span>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        const reg = document.querySelector('.rightreg .other')
+        const log = document.querySelector('.rightlog .other .leap')
+        const rl = document.querySelector('.rightlog')
+        const re = document.querySelector('.rightreg')
+        const img = document.querySelector('.left img')
+        const left = document.querySelector('.wrapper .left')
+        log.addEventListener('click',()=>{
+            left.style.left = 400 + 'px'
+            re.style.display = 'block'
+            img.src = `pexels-pixabay-220429.jpg`
+        })
+        reg.addEventListener('click',()=>{
+            left.style.left = 0
+            img.src = `pexels-keegan-houser-1478685.jpg`
+        })
+        const button = document.querySelector('.code button')
+        let stop = 1
+        button.addEventListener('click',()=>{
+            if(stop){
+                let i = 60
+                button.innerHTML=`${i}秒后重新获取`
+                stop = 0
+                let timefun = setInterval(()=>{
+                    i--
+                    button.innerHTML=`${i}秒后重新获取`
+                    if(i===-1){
+                    clearInterval(timefun)
+                    stop = 1
+                    button.innerHTML=`重新获取`
+                }
+                },1000)
+                
+                
+            }
+        })
+        const information = {ts:'2023000a',ps:'123abc'}
+        const enter = document.querySelector('.rightlog .log')
+        const text = document.querySelector('.rightlog .tx')
+        const pass = document.querySelector('.rightlog .ps')
+
+        enter.addEventListener('click',()=>{
+            if(text.value === information.ts&& pass.value===information.ps){
+                location.href='../个人介绍/个人介绍.html'
+            }else{
+                alert('请输入正确的用户名或密码')
+            }
+        })
+         const cn = document.querySelector('.callnumber')
+         const cnr = /^1[0-9]{10}$/
+         function phonev(){
+            if(!cnr.test(cn.value)){
+                alert('请输入正确的手机号格式')
+                return false
+            }
+            return true
+         }
+         cn.addEventListener('change',phonev)
+
+         const ps = document.querySelector('.rightreg .ps')
+         const psr = /^[a-zA-Z0-9-_]{6,16}$/
+         function psv(){
+            if(!psr.test(ps.value)){
+                alert('请输入6-16位密码')
+                return false
+            }
+            return true
+         }
+         ps.addEventListener('change',psv)
+
+
+         const tx = document.querySelector('.rightreg .tx')
+         const txr = /^[a-zA-Z0-9-_]{2,12}$/
+         function textv(){
+            if(!txr.test(tx.value)){
+                alert('请输入2-12位字符')
+                return false
+            }
+            return true
+         }
+         tx.addEventListener('change',textv)
+
+         const code = document.querySelector('.rightreg .code input')
+         const coder = /^[0-9]{6}$/
+         function codev(){
+            if(!coder.test(code.value)){
+                alert('请输入6位验证码')
+                return false
+            }
+            return true
+         }
+         code.addEventListener('change',codev)
+         const prs = document.querySelector('.prs')
+         function prsv(){
+            if(prs.value != ps.value){
+                alert('两次输入密码不一致，请重新输入')
+                return false
+            }
+            return true
+         }
+         prs.addEventListener('change',prsv)
+
+
+
+
+    </script>
+</body>
+</html>

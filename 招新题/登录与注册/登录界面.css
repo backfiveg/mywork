@@ -1,0 +1,153 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body,
+html{
+    background-color:azure;
+}
+.wrapper{
+    width: 1200px;
+    height: 560px;
+    display: flex;
+    margin: 100px auto;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    overflow: hidden;
+    position: relative;
+}
+.left{
+    width: 800px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    transition: all 1.5s;
+}
+.left img{
+    width: 800px;
+    height: 100%;
+    border-radius: 15px;
+}
+.rightlog{
+    width: 400px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    background-color: #fff;
+}
+.rightlog .topic{
+    margin: 50px auto;
+    font-size: 32px;
+    text-align: center;
+}
+.rightlog input,
+.rightlog .log{
+    margin: 75px auto;
+    display: block;
+    height: 50px;
+}
+.rightlog input{
+    width: 80%;
+    outline: none;
+    padding-left: 10px;
+    border: none;
+    border-bottom: 2px solid black;
+}
+.rightlog .log{
+    width: 50%;
+    background-color: bisque;
+    border-radius: 37.5px;
+    outline: none;margin-bottom: 0;
+    cursor: pointer;
+}
+.rightlog .other{
+    width: 80%;
+    position: relative;
+    margin: 10px auto;
+}
+
+.rightlog .other .leap{
+    display: block;
+    position: absolute;
+    left: 0;
+    color:cadetblue;
+    cursor: pointer;
+    
+}
+.rightlog .other .leap_{
+    display: block;
+    position: absolute;
+    right: 0;
+    color: cadetblue;
+    cursor: pointer;
+    }
+
+.rightreg{
+        width: 400px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        display: none;
+    }
+.rightreg .reg{
+        margin: 25px auto;
+        font-size: 32px;
+        text-align: center;
+        margin-bottom: 0;
+    }
+    .rightreg input,
+    .rightreg .log,
+    .rightreg .code{
+        margin: 20px auto;
+        display: block;
+        height: 50px;
+    }
+    .rightreg input{
+        width: 80%;
+        outline: none;
+        padding-left: 10px;
+        border: none;
+        border-bottom: 2px solid black;
+    }
+    .rightreg .log{
+        width: 50%;
+        background-color: bisque;
+        border-radius: 37.5px;
+        outline: none;margin-bottom: 0;
+        cursor: pointer;
+    }
+    .rightreg .code{
+        display: flex;
+        width: 80%;
+        position: relative;
+        margin-bottom: 50px;
+    }
+    .rightreg .code input{
+        position: absolute;
+        left: 0;
+        flex: 2;
+    }
+    .rightreg .code button{
+        position: absolute;
+        right: 0;
+        bottom: -50%;
+        transform: translate(-50% -50%);
+        vertical-align: middle;
+        flex: 1;
+        height: 100%;
+        border-radius: 15px;
+        background-color: bisque;
+        outline: none;
+        cursor: pointer;
+    }
+    .rightreg .other{
+        transform: translate(45px);
+        color: cadetblue;
+        cursor: pointer;
+    }
